@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Money Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <div>
+        <p class="eyebrow">STUDENT FINANCE</p>
+        <h1>Money Manager</h1>
+        <p class="sub">Simple हिसाब for your daily student expenses.</p>
+      </div>
+      <button id="clearAll" class="danger ghost">Clear All</button>
+    </header>
+
+    <section class="cards">
+      <div class="card balance"><span>Balance</span><strong id="balance">₹0</strong></div>
+      <div class="card income"><span>Received</span><strong id="income">₹0</strong></div>
+      <div class="card expense"><span>Spent</span><strong id="expense">₹0</strong></div>
+    </section>
+
+    <section class="panel">
+      <h2>Add Transaction</h2>
+      <form id="transactionForm">
+        <div class="grid">
+          <label>Type
+            <select id="type" required>
+              <option value="expense">Expense</option>
+              <option value="income">Received Money</option>
+            </select>
+          </label>
+          <label>Amount (₹)
+            <input id="amount" type="number" min="1" step="0.01" placeholder="500" required>
+          </label>
+          <label>Category
+            <select id="category">
+              <option>Food</option>
+              <option>Travel</option>
+              <option>College</option>
+              <option>Shopping</option>
+              <option>Recharge</option>
+              <option>Entertainment</option>
+              <option>Other</option>
+            </select>
+          </label>
+          <label>Date
+            <input id="date" type="date" required>
+          </label>
+        </div>
+        <label>Note
+          <input id="note" maxlength="80" placeholder="e.g. Lunch, bus, books...">
+        </label>
+        <button class="primary" type="submit">+ Add Transaction</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <div class="section-head">
+        <h2>History</h2>
+        <input id="search" class="search" placeholder="Search...">
+      </div>
+      <div id="empty" class="empty">No transactions yet.</div>
+      <div id="list"></div>
+    </section>
+
+    <footer>Data is saved locally on this device using your browser.</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
